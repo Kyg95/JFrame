@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="loginmapper">
+<select id="selectIteminfoCondition" parameterType="HashMap" resultType="n0510.ItemInfo">
+select * from item_info
+<where>
+<if test="code != null">and code=#{code}</if>
+<if test="name != null">and name=#{name}</if>
+<if test="price != null">and price=#{price}</if>
+<if test="origin != null">and origin=#{origin}</if>
+</where>
+</select>
+	<select id="selectAllIteminfo" resultType="n0510.ItemInfo">
+		select * from item_info
+	</select>
+	<select id="selectAllEmpl" resultType="n0510.Empl_info">
+		select * from empl_info
+	</select>
+	<select id="selectAllCustomer" resultType="n0510.Customer_info">
+		select * from
+		customer_info
+	</select>
+</mapper>
